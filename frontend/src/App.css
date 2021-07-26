@@ -1,0 +1,7 @@
+.App {
+  background-color: dimgray;
+  padding: 5px;
+  font-family: sans-serif;
+  min-height: 100vh;
+  color: white;
+}
