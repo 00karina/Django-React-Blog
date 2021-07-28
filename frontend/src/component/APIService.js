@@ -9,4 +9,15 @@ export default class APIService {
       body: JSON.stringify(body),
     }).then((resp) => resp.json());
   }
+
+  static InsertArticle(body) {
+    return fetch(`http://127.0.0.1:8000/articles/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Token e2bdc24215b1db777eb49518228727154cdd6808",
+      },
+      body: JSON.stringify(body),
+    }).then((resp) => resp.json());
+  }
 }
