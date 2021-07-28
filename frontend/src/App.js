@@ -23,6 +23,18 @@ function App() {
   const editBtn = (article) => {
     setEditArticle(article);
   };
+
+  const updatedInfo = (article) => {
+    const new_article = articles.map((myarticle) => {
+      if (myarticle.id === article.id) {
+        return article;
+      } else {
+        return myarticle;
+      }
+    });
+    setArticles(new_article);
+  };
+
   return (
     <div className="App">
       <div className="container">
@@ -30,7 +42,9 @@ function App() {
         <br></br>
         <br></br>
         <ArticleList articles={articles} editBtn={editBtn} />
-        <Form article={editArticle}></Form>
+        {editArticle ? (
+          <Form article={editArticle} updatedInfo={updatedInfo}></Form>
+        ) : null}
       </div>
     </div>
   );
