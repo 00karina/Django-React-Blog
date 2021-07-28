@@ -5,7 +5,7 @@ import ArticleList from "./component/ArticleList";
 import Form from "./component/Form";
 function App() {
   const [articles, setArticles] = useState([]);
-  const [edit, setEdit] = useState(null);
+  const [editArticle, setEditArticle] = useState(null);
 
   useEffect(() => {
     fetch("http://127.0.0.1:8000/articles/", {
@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   const editBtn = (article) => {
-    setEdit(article);
+    setEditArticle(article);
   };
   return (
     <div className="App">
@@ -30,7 +30,7 @@ function App() {
         <br></br>
         <br></br>
         <ArticleList articles={articles} editBtn={editBtn} />
-        <Form edit={edit}></Form>
+        <Form article={editArticle}></Form>
       </div>
     </div>
   );

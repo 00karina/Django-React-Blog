@@ -1,7 +1,7 @@
 import React from "react";
 
-const Form = () => {
-  return <div>form</div>;
+const Form = (props) => {
+  return <div>{props.article && props.article.Title}</div>;
 };
 
 export default Form;
