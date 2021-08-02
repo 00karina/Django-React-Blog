@@ -1,38 +1,19 @@
 import React from "react";
 
-const ArticleList = (props) => {
-  const editBtn = (article) => {
-    props.editBtn(article);
-  };
+const ArticleList = ({ id, title, description }) => {
   return (
     <div>
-      {props.articles &&
-        props.articles.map((article) => {
-          return (
-            <div key={article.id}>
-              <h2>{article.Title}</h2>
-              <p>{article.Description}</p>
-              <div className="container">
-                <div className="row">
-                  <button
-                    className="btn btn-info "
-                    onClick={() => editBtn(article)}
-                  >
-                    Update
-                  </button>
-
-                  <button
-                    className="btn btn-danger"
-                    style={{ marginLeft: "30px" }}
-                  >
-                    Delete
-                  </button>
-                </div>
-                <hr></hr>
-              </div>
-            </div>
-          );
-        })}
+      <div className="container border-bottom pt-3">
+        <div className="row">
+          <h5>{title}</h5>
+          <p>{description}</p>
+          <button className="btn btn-info ">Update</button>
+          <button className="btn btn-danger" style={{ marginLeft: "30px" }}>
+            Delete
+          </button>
+        </div>
+        <hr></hr>
+      </div>
     </div>
   );
 };
